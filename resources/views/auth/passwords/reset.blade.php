@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
+    <div class="row component-center">
+        <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Reset Password</div>
+                <div class="card-header"><b>Reset Password</b></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.request') }}">
