@@ -119,6 +119,8 @@ return [
     'attributes' => [
       'email' => 'Correo electrónico',
       'password' => 'Contraseña',
+      'names' => 'Nombres',
+      'lastnames' => 'Apellidos', 
     ],
 
 ];

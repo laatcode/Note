@@ -12,28 +12,28 @@
                         {{ csrf_field() }}
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-right">Nombres</label>
+                            <label for="names" class="col-md-4 col-form-label text-right">Nombres</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="names" type="text" class="form-control{{ $errors->has('names') ? ' is-invalid' : '' }}" name="names" value="{{ old('names') }}" required autofocus>
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('names'))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('names') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="lastname" class="col-md-4 col-form-label text-right">Apellidos</label>
+                            <label for="lastnames" class="col-md-4 col-form-label text-right">Apellidos</label>
 
                             <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{ old('lastname') }}" required autofocus>
+                                <input id="lastnames" type="text" class="form-control{{ $errors->has('lastnames') ? ' is-invalid' : '' }}" name="lastnames" value="{{ old('lastnames') }}" required autofocus>
 
-                                @if ($errors->has('lastname'))
+                                @if ($errors->has('lastnames'))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('lastname') }}</strong>
+                                        <strong>{{ $errors->first('lastnames') }}</strong>
                                     </span>
                                 @endif
                             </div>
