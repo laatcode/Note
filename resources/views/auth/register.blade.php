@@ -12,7 +12,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group row">
-                            <label for="names" class="col-md-4 col-form-label text-right">Nombres</label>
+                            <label for="names" class="col-md-4 col-form-label text-md-right required">Nombres</label>
 
                             <div class="col-md-6">
                                 <input id="names" type="text" class="form-control{{ $errors->has('names') ? ' is-invalid' : '' }}" name="names" value="{{ old('names') }}" required autofocus>
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="lastnames" class="col-md-4 col-form-label text-right">Apellidos</label>
+                            <label for="lastnames" class="col-md-4 col-form-label text-md-right required">Apellidos</label>
 
                             <div class="col-md-6">
                                 <input id="lastnames" type="text" class="form-control{{ $errors->has('lastnames') ? ' is-invalid' : '' }}" name="lastnames" value="{{ old('lastnames') }}" required autofocus>
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-right">Correo electrónico</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right required">Correo electrónico</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-right">Contraseña</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right required">Contraseña</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-right">Confirmar Contraseña</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right required">Confirmar Contraseña</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>

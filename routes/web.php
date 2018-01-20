@@ -17,4 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/notebooks', 'NotebookController@showList')->middleware('auth');
+Route::get('/notebook/{id}', 'NotebookController@showNotebook')->middleware('auth');
+
+Route::post('/notebooks/create', 'NotebookController@create');
