@@ -2,19 +2,18 @@
 
 @section('content')
   <div class="container">
-    <ul class="nav justify-content-between">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Libretas
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal">Nueva libreta</a>
-          @foreach ($notebooks as $notebook)
-            <a class="dropdown-item" href="notebook/{{ $notebook['id'] }}">{{ $notebook['title'] }}</a>
-          @endforeach
-        </div>
-      </li>
-    </ul>
+    <h5>Seleccione la libreta que desea usar:</h5>
+    <div class="dropdown">
+      <a class="dropdown-toggle btn btn-primary" href="#" id="notebooks" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Libretas <span class="badge badge-light">{{ count( $notebooks ) }}</span>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="notebooks">
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal">Nueva libreta</a>
+        @foreach ($notebooks as $notebook)
+          <a class="dropdown-item" href="notebook/{{ $notebook['id'] }}">{{ $notebook['title'] }}</a>
+        @endforeach
+      </div>
+    </div>
 
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">

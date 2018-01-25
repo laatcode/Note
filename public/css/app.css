@@ -38,3 +38,23 @@ body{
    content:" *";
    color:red;
 }
+
+.note{
+  background-color: white;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+}
+
+.note:hover{
+  background-color: gray;
+}
+
+.note a{
+  color: black;
+  text-decoration: none;
+}
+
+.note p{
+  margin: 0;
+}

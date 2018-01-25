@@ -19,5 +19,6 @@ Auth::routes();
 
 Route::get('/notebooks', 'NotebookController@showList')->middleware('auth');
 Route::get('/notebook/{id}', 'NotebookController@showNotebook')->middleware('auth');
+Route::post('/notebook/{id}/createNote', 'NoteController@create')->middleware('auth');
 
 Route::post('/notebooks/create', 'NotebookController@create');

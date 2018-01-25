@@ -3,8 +3,8 @@
 @section('content')
   <div class="row component-center">
     <div class="jumbotron splash">
-      <h1 class="display-4">To Do List</h1>
-      <p class="lead">Organiza tu día, crea tareas y/o notas con notificaciones en tiempo real para estar organizar mejor tu vida.</p>
+      <h1 class="display-4">Note</h1>
+      <p class="lead">No permitas escapar ninguna de tus ideas, escríbela rapidamente y mantenas disponibles en todo momento con Note.</p>
       <hr class="my-4">
       @guest
         <p>¿Aún no tienes una cuenta?</p>
