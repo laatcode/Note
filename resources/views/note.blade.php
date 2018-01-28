@@ -5,7 +5,7 @@
     <form action="/notebook/{{ $notebookId }}/updateNote/{{ $note['id'] }}" method="post">
       {{ csrf_field() }}
       <div class="form-group">
-        <input class="form-control" type="text" name="title" value="{{$note['title']}}" style='width:100%'>
+        <input class="form-control" type="text" name="title" value="{{$note['title']}}">
       </div>
       <div class="form-group">
         <textarea class="form-control" name="text" rows="8" cols="80">{{ $note['text'] }}</textarea>

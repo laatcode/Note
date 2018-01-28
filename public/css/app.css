@@ -21,13 +21,13 @@ body{
   margin: 0;
 }
 
-.card{
-  background: none;
-  background-color: rgba(192,192,192,0.7);
-}
-
 .splash{
   max-width: 800px;
+}
+
+.notesList{
+  background: none;
+  background-color: rgba(192,192,192,0.7);
 }
 
 .jumbotron{
