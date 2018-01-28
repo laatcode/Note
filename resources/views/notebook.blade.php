@@ -8,12 +8,12 @@
       </div>
       <div class="card-body">
         <p class="card-subtitle">{{ $notebook['description'] }}</p>
-        <a href="#"><button role="button" class="btn btn-secundary">Regresar</button></a>
+        <a href="/notebooks"><button role="button" class="btn btn-secundary">Mis libretas</button></a>
         <a href="#" data-toggle="modal" data-target="#modal"><button role="button" class="btn btn-primary">Nueva nota</button></a>
         <ul class="list-group">
           @foreach ($notes as $note)
             <div class="note">
-              <a href="#">
+              <a href="/notebook/{{ $notebook['id'] }}/note/{{ $note['id'] }}">
                 <h3>{{ $note['title'] }}</h3>
                 <p>{{ $note['text'] }}</p>
               </a>
