@@ -16,7 +16,8 @@
               <a href="/notebook/{{ $notebook['id'] }}/note/{{ $note['id'] }}">
                 <h3>{{ $note['title'] }}</h3>
                 <p>{{ $note['text'] }}</p>
-                <p class="text-muted">{{ $note['created_at'] }}</p>
+                <small class="text-muted"><b>Creada el: </b>{{ $note['created_at'] }}</small></br>
+                <small class="text-muted"><b>Modificada el: </b>{{ $note['updated_at'] }}</small>
               </a>
             </div>
           @endforeach
