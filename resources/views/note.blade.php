@@ -2,6 +2,9 @@
 
 @section('content')
   <div class="container">
+    <div class="principalButtons">
+      <a class="btn btn-primary" href="/notebook/{{ $notebookId }}">Regresar</a>
+    </div>
     <form action="/notebook/{{ $notebookId }}/updateNote/{{ $note['id'] }}" method="post">
       {{ csrf_field() }}
       <div class="form-group">

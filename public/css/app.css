@@ -58,3 +58,7 @@ body{
 .note p{
   margin: 0;
 }
+
+.principalButtons{
+  margin: 10px 0;
+}

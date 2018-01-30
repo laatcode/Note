@@ -5,8 +5,10 @@
 
     <h2>{{ $notebook['title'] }}</h2>
 
-    <a href="/notebooks"><button role="button" class="btn btn-secundary">Mis libretas</button></a>
-    <a href="#" data-toggle="modal" data-target="#modal"><button role="button" class="btn btn-primary">Nueva nota</button></a>
+    <div class="principalButtons">
+      <a href="/notebooks"><button role="button" class="btn btn-secundary">Mis libretas</button></a>
+      <a href="#" data-toggle="modal" data-target="#modal"><button role="button" class="btn btn-primary">Nueva nota</button></a>
+    </div>
 
     <div class="notesList">
       <ul class="list-group">
