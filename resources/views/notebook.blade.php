@@ -3,7 +3,7 @@
 @section('content')
   <div class="container">
 
-    <h2>{{ $notebook['title'] }}</h2>
+    <h2 class="title">{{ $notebook['title'] }}</h2>
 
     <div class="principalButtons">
       <a href="/notebooks"><button role="button" class="btn btn-secundary">Mis libretas</button></a>

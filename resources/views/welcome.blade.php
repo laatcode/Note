@@ -3,7 +3,7 @@
 @section('content')
   <div class="row component-center">
     <div class="jumbotron splash">
-      <h1 class="display-4">Note</h1>
+      <h1 class="display-4">Notes</h1>
       <p class="lead">No permitas escapar ninguna de tus ideas, escríbela rapidamente y mantenas disponibles en todo momento con Note.</p>
       <hr class="my-4">
       @guest
