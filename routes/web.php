@@ -17,10 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/notebooks', 'NotebookController@showList')->middleware('auth');
-Route::get('/notebook/{id}', 'NotebookController@showNotebook')->middleware('auth');
-Route::post('/notebooks/create', 'NotebookController@create');
-
-Route::get('/notebook/{notebookId}/note/{noteId}', 'NoteController@show')->middleware('auth');
-Route::post('/notebook/{id}/createNote', 'NoteController@create')->middleware('auth');
-Route::post('/notebook/{notebookId}/updateNote/{noteId}', 'NoteController@update')->middleware('auth');
+Route::group(['middleware' => 'auth'], function (){
+  Route::get('/notebooks', 'NotebookController@showList');
+  Route::get('/notebook/{id}', 'NotebookController@showNotebook');
+  Route::get('/notebook/{notebookId}/note/{noteId}', 'NoteController@show');
+  Route::post('/notebook/{id}/createNote', 'NoteController@create');
+  Route::post('/notebook/{notebookId}/updateNote/{noteId}', 'NoteController@update');
+  Route::post('/notebooks/create', 'NotebookController@create');
+});
