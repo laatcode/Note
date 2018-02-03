@@ -20,8 +20,8 @@ body{
   font-size: 2rem;
 }
 
-.title{
-  font-size: 3rem;
+.navbar .nav-item, .navbar .dropdown-item{
+  font-size: 1.4rem;
 }
 
 .component-center{
@@ -39,6 +39,10 @@ body{
 
 .jumbotron{
   background-color: rgba(192,192,192,0.7);
+}
+
+.title{
+  font-size: 3rem;
 }
 
 .notesList{
