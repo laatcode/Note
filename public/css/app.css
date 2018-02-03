@@ -4,7 +4,7 @@
 }
 
 body{
-  font-family: 'Damion', cursive;
+  font-family: 'Roboto', sans-serif;
 }
 
 .app{
@@ -20,8 +20,13 @@ body{
   font-size: 2rem;
 }
 
-.navbar .nav-item, .navbar .dropdown-item{
-  font-size: 1.4rem;
+.damion{
+  font-family: 'Damion', cursive;
+}
+
+.paragraph{
+  font-family: 'Damion', cursive;
+  font-size: 1.6rem;
 }
 
 .component-center{
@@ -34,7 +39,7 @@ body{
 }
 
 .splash{
-  max-width: 800px;
+  max-width: 750px;
 }
 
 .jumbotron{

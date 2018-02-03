@@ -9,13 +9,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name') }}</title>
-    
+
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Satisfy|Damion" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy|Damion|Roboto" rel="stylesheet">
 </head>
 <body>
     <div id="app" class="app">
