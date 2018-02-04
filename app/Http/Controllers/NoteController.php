@@ -33,4 +33,9 @@ class NoteController extends Controller{
       $note->save();
       return redirect("/notebook/$notebookId/note/$noteId");
     }
+
+    function delete($notebookId, $noteId){
+      Note::destroy($noteId);
+      return redirect("/notebook/$notebookId");
+    }
 }

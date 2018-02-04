@@ -14,48 +14,48 @@
       <ul class="list-group">
         @foreach ($notes as $note)
           <div class="note">
-            <a href="/notebook/{{ $notebook['id'] }}/note/{{ $note['id'] }}">
-              <h3>{{ $note['title'] }}</h3>
-              <p>{{ $note['text'] }}</p>
-              <small class="text-muted"><b>Creada el: </b>{{ $note['created_at'] }}</small></br>
-              <small class="text-muted"><b>Modificada el: </b>{{ $note['updated_at'] }}</small>
-            </a>
+              <div class="col-10 col-lg-11">
+                <a class="d-block" href="/notebook/{{ $notebook['id'] }}/note/{{ $note['id'] }}">
+                  <h3>{{ $note['title'] }}</h3>
+                  <p class="m-0">{{ $note['text'] }}</p>
+                  <small class="text-muted"><b>Creada el: </b>{{ $note['created_at'] }}</small></br>
+                  <small class="text-muted"><b>Modificada el: </b>{{ $note['updated_at'] }}</small>
+                </a>
+              </div>
+              <div class="col-2 col-lg-1 d-flex align-items-center justify-content-around">
+                <a href="#"><span class="far fa-edit fa-lg"></span></a>
+                <a href="#" data-toggle="modal" data-target="#confirmDelete"><span class="far fa-trash-alt fa-lg"></span></a>
+              </div>
           </div>
         @endforeach
       </ul>
     </div>
 
-    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <form action="/notebook/{{ $notebook['id'] }}/createNote" method="post">
-            {{ csrf_field() }}
-          <div class="modal-header">
-            <h5 class="modal-title">Crear Nota</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="container-fluid">
-              <div class="form-group">
-                <label for="title" class="required">Título</label>
-                <input type="text" class="form-control" name="title" required>
-              </div>
-              <div class="form-group">
-                <label for="text" class="required">Texto de la nota</label>
-                <textarea class="form-control" name="text" rows="10"></textarea>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secundary" data-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Crear</button>
-          </div>
-        </form>
-        </div>
+    @component('templates.createModal')
+      @slot('route')
+        /notebook/{{ $notebook['id'] }}/createNote
+      @endslot
+
+      @slot('title')
+        Crear Nota
+      @endslot
+
+      <div class="form-group">
+        <label for="title" class="required">Título</label>
+        <input type="text" class="form-control" name="title" required>
       </div>
-    </div>
+      <div class="form-group">
+        <label for="text" class="required">Texto de la nota</label>
+        <textarea class="form-control" name="text" rows="10"></textarea>
+      </div>
+    @endcomponent
+
+    @component('templates.confirmDeleteModal')
+      <p>Está seguro que desea eliminar esta nota</p>
+      @slot('getRoute')
+        /notebook/{{ $notebook['id'] }}/deleteNote/{{ $note['id'] }}
+      @endslot
+    @endcomponent
 
   </div>
 @endsection
