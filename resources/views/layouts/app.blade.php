@@ -16,6 +16,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Satisfy|Damion|Roboto" rel="stylesheet">
+    <link href="{{ asset('css/fontawesome-all.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app" class="app">
