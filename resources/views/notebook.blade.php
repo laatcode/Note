@@ -51,7 +51,7 @@
     @endcomponent
 
     @component('templates.confirmDeleteModal')
-      <p>Está seguro que desea eliminar esta nota</p>
+      <p class="m-0">¿Está seguro que desea eliminar esta nota?</p>
       @slot('getRoute')
         /notebook/{{ $notebook['id'] }}/deleteNote/{{ $note['id'] }}
       @endslot
