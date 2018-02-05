@@ -4,7 +4,7 @@
   <div class="container">
     <h5>Seleccione la libreta que desea usar:</h5>
     <div class="dropdown">
-      <a class="dropdown-toggle btn btn-primary" href="#" id="notebooks" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="dropdown-toggle btn btn-info" href="#" id="notebooks" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Libretas <span class="badge badge-light">{{ count( $notebooks ) }}</span>
       </a>
       <div class="dropdown-menu" aria-labelledby="notebooks">

@@ -17,11 +17,12 @@ class NoteController extends Controller{
       return redirect("/notebook/$id");
     }
 
-    function show($notebookId, $noteId){
+    function show($notebookId, $noteId, $mode){
       $note = Note::find($noteId);
       return view('note', [
         'note' => $note,
         'notebookId' => $notebookId,
+        'mode' => $mode,
       ]);
     }
 

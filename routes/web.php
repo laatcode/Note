@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth'], function (){
   Route::get('/notebook/{id}', 'NotebookController@show');
 
   Route::post('/notebook/{id}/createNote', 'NoteController@create');
-  Route::get('/notebook/{notebookId}/note/{noteId}', 'NoteController@show');
+  Route::get('/notebook/{notebookId}/note/{noteId}/{mode}', 'NoteController@show');
   Route::post('/notebook/{notebookId}/updateNote/{noteId}', 'NoteController@update');
   Route::get('/notebook/{notebookId}/deleteNote/{noteId}', 'NoteController@delete');
 });
