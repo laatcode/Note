@@ -1,4 +1,4 @@
-<div class="modal fade" id="confirmDelete" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+<div class="modal fade" id="confirmDelete" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true" onload="myFunction">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -13,9 +13,27 @@
         </div>
       </div>
       <div class="modal-footer">
-        <a class="btn btn-danger" href="{{ $getRoute }}">Eliminar</a>
+        <a id="getRoute" class="btn btn-danger" href="{{ $getRoute }}">Eliminar</a>
         <button type="button" class="btn btn-secundary" data-dismiss="modal">Cancelar</button>
       </div>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+
+  let getRoute;
+  let baseRoute;
+
+  window.onLoad = initial();
+
+  function initial(){
+    getRoute = document.getElementById("getRoute");
+    baseRoute = getRoute.getAttribute("href");
+  }
+
+  function openModal(note){
+    let noteId = note.getAttribute("data-id");
+    document.getElementById("getRoute").setAttribute("href", baseRoute + noteId);
+  }
+
+</script>

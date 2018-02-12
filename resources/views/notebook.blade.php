@@ -24,7 +24,7 @@
               </div>
               <div class="col-2 col-lg-2 d-flex align-items-center justify-content-around p-0">
                 <a href="/notebook/{{ $notebook['id'] }}/note/{{ $note['id'] }}/e"><span class="far fa-edit fa-2x"></span></a>
-                <a href="#" data-toggle="modal" data-target="#confirmDelete"><span class="far fa-trash-alt fa-2x"></span></a>
+                <a href="#" data-id="{{ $note['id'] }}" data-toggle="modal" data-target="#confirmDelete" onclick="openModal(this)"><span class="far fa-trash-alt fa-2x"></span></a>
               </div>
           </div>
         @endforeach
@@ -53,7 +53,7 @@
     @component('templates.confirmDeleteModal')
       <p class="m-0">¿Está seguro que desea eliminar esta nota?</p>
       @slot('getRoute')
-        /notebook/{{ $notebook['id'] }}/deleteNote/{{ $note['id'] }}
+        /notebook/{{ $notebook['id'] }}/deleteNote/
       @endslot
     @endcomponent
 
