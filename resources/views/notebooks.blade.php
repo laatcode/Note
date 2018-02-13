@@ -10,10 +10,20 @@
       <div class="dropdown-menu" aria-labelledby="notebooks">
         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal">Nueva libreta</a>
         @foreach ($notebooks as $notebook)
-          <a class="dropdown-item" href="notebook/{{ $notebook['id'] }}">{{ $notebook['title'] }}</a>
+          <div class="d-flex align-items-center mr-3">
+            <a class="dropdown-item" href="notebook/{{ $notebook['id'] }}">{{ $notebook['title'] }}</a>
+            <a href="#" data-id="{{ $notebook['id'] }}" data-toggle="modal" data-target="#confirmDelete" onclick="openModal(this)"><span class="far fa-trash-alt fa-lg"></span></a>
+          </div>
         @endforeach
       </div>
     </div>
+
+    @component('templates.confirmDeleteModal')
+      <p class="m-0">¿Está seguro que desea eliminar esta libreta con todas las notas?</p>
+      @slot('getRoute')
+        /notebooks/deleteNotebook/
+      @endslot
+    @endcomponent
 
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">

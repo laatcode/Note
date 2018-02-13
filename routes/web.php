@@ -20,6 +20,7 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function (){
   Route::get('/notebooks', 'NotebookController@showList');
   Route::post('/notebooks/create', 'NotebookController@create');
+  Route::get('/notebooks/deleteNotebook/{notebookId}', 'NotebookController@delete');
   Route::get('/notebook/{id}', 'NotebookController@show');
 
   Route::post('/notebook/{id}/createNote', 'NoteController@create');

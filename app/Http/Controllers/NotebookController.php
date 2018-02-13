@@ -34,4 +34,9 @@ class NotebookController extends Controller{
         'notes' => $notes,
       ]);
     }
+
+    function delete($notebookId){
+      Notebook::destroy($notebookId);
+      return redirect("/notebooks");
+    }
 }
