@@ -18,6 +18,25 @@
       </div>
     </div>
 
+    @component('templates.createModal')
+      @slot('route')
+        /notebooks/create
+      @endslot
+
+      @slot('title')
+        Crear Libreta
+      @endslot
+
+      <div class="form-group">
+        <label for="title" class="required">Nombre</label>
+        <input type="text" class="form-control" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="text" class="required">Descripción</label>
+        <textarea class="form-control" name="description" rows="5"></textarea>
+      </div>
+    @endcomponent
+
     @component('templates.confirmDeleteModal')
       <p class="m-0">¿Está seguro que desea eliminar esta libreta con todas las notas?</p>
       @slot('getRoute')
@@ -25,36 +44,5 @@
       @endslot
     @endcomponent
 
-    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <form action="/notebooks/create" method="post">
-            {{ csrf_field() }}
-          <div class="modal-header">
-            <h5 class="modal-title">Crear libreta</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="container-fluid">
-              <div class="form-group">
-                <label for="name" class="required">Nombre</label>
-                <input type="text" class="form-control" name="name" required>
-              </div>
-              <div class="form-group">
-                <label for="description">Descripción</label>
-                <textarea class="form-control" name="description" rows="3"></textarea>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secundary" data-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Crear</button>
-          </div>
-        </form>
-        </div>
-      </div>
-    </div>
   </div>
 @endsection
