@@ -12,7 +12,7 @@
         @foreach ($notebooks as $notebook)
           <div class="d-flex align-items-center mr-3">
             <a class="dropdown-item" href="notebook/{{ $notebook['id'] }}">{{ $notebook['title'] }}</a>
-            <a href="#" data-id="{{ $notebook['id'] }}" data-toggle="modal" data-target="#confirmDelete" onclick="openModal(this)"><span class="far fa-trash-alt fa-lg"></span></a>
+            <a id="openConfirmDelete" href="#" data-id="{{ $notebook['id'] }}" data-toggle="modal" data-target="#confirmDelete"><span class="far fa-trash-alt fa-lg"></span></a>
           </div>
         @endforeach
       </div>

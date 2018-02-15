@@ -17,6 +17,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Satisfy|Damion|Roboto" rel="stylesheet">
     <link href="{{ asset('css/fontawesome-all.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
 </head>
 <body>
     <div id="app" class="app">
@@ -71,8 +73,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/popper.js') }}"></script>
     <script src="{{ asset('js/bootstrap.js') }}"></script>
 </body>

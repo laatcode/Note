@@ -21,19 +21,14 @@
 </div>
 <script type="text/javascript">
 
-  let getRoute;
   let baseRoute;
 
-  window.onLoad = initial();
+  $(document).ready(function (){
+    baseRoute = $("#getRoute").attr("href");
+  });
 
-  function initial(){
-    getRoute = document.getElementById("getRoute");
-    baseRoute = getRoute.getAttribute("href");
-  }
-
-  function openModal(note){
-    let noteId = note.getAttribute("data-id");
-    document.getElementById("getRoute").setAttribute("href", baseRoute + noteId);
-  }
+  $(document).on("click", "#openConfirmDelete", function (){
+    $("#getRoute").attr("href", baseRoute + $(this).attr("data-id"));
+  });
 
 </script>
