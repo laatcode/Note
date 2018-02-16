@@ -19,16 +19,3 @@
     </div>
   </div>
 </div>
-<script type="text/javascript">
-
-  let baseRoute;
-
-  $(document).ready(function (){
-    baseRoute = $("#getRoute").attr("href");
-  });
-
-  $(document).on("click", "#openConfirmDelete", function (){
-    $("#getRoute").attr("href", baseRoute + $(this).attr("data-id"));
-  });
-
-</script>

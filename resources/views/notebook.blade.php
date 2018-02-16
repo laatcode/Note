@@ -7,7 +7,7 @@
 
     <div class="principalButtons">
       <a class="mr-3" href="/notebooks"><button role="button" class="btn btn-info">Mis libretas</button></a>
-      <a href="#" data-toggle="modal" data-target="#modal"><button role="button" class="btn btn-warning">Nueva nota</button></a>
+      <a href="#" data-toggle="modal" data-target="#createModal"><button role="button" class="btn btn-warning">Nueva nota</button></a>
     </div>
 
     <div class="notesList">

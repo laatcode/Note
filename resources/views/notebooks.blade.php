@@ -8,7 +8,7 @@
         Libretas <span class="badge badge-light">{{ count( $notebooks ) }}</span>
       </a>
       <div class="dropdown-menu" aria-labelledby="notebooks">
-        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal">Nueva libreta</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#createModal">Nueva libreta</a>
         @foreach ($notebooks as $notebook)
           <div class="d-flex align-items-center mr-3">
             <a class="dropdown-item" href="notebook/{{ $notebook['id'] }}">{{ $notebook['title'] }}</a>
@@ -28,11 +28,21 @@
       @endslot
 
       <div class="form-group">
+        @if ($errors->any())
+          <div id="error"></div>
+        @endif
         <label for="title" class="required">Nombre</label>
-        <input type="text" class="form-control" name="name" required>
+        <input type="text" class="form-control @if($errors->has('name')) is-invalid @endif" name="name" required>
+        @if ($errors->has('name'))
+          @foreach ($errors->get('name') as $error)
+            <div class="invalid-feedback">
+              {{ $error }}
+            </div>
+          @endforeach
+        @endif
       </div>
       <div class="form-group">
-        <label for="text" class="required">Descripción</label>
+        <label for="text">Descripción</label>
         <textarea class="form-control" name="description" rows="5"></textarea>
       </div>
     @endcomponent
@@ -45,4 +55,22 @@
     @endcomponent
 
   </div>
+
+  <script type="text/javascript">
+
+    let baseRoute;
+
+    $(document).ready(function (){
+      baseRoute = $("#getRoute").attr("href");
+
+      if ($("#error").length) {
+        $('#createModal').modal();
+      }
+
+      $(document).on("click", "#openConfirmDelete", function (){
+        $("#getRoute").attr("href", baseRoute + $(this).attr("data-id"));
+      });
+    });
+
+  </script>
 @endsection

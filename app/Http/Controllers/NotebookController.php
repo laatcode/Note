@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateNotebookRequest;
 use App\Notebook;
 use App\Note;
 
@@ -16,7 +17,7 @@ class NotebookController extends Controller{
     ]);
   }
 
-    function create(Request $request){
+    function create(CreateNotebookRequest $request){
       $user = \Auth::user();
       $notebook = Notebook::create([
         'title' => $request->input('name'),
