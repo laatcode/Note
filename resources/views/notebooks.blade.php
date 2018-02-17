@@ -32,7 +32,7 @@
           <div id="error"></div>
         @endif
         <label for="title" class="required">Nombre</label>
-        <input type="text" class="form-control @if($errors->has('name')) is-invalid @endif" name="name" required>
+        <input type="text" class="form-control @if($errors->has('name')) is-invalid @endif" name="name" value="{{ old('name') }}" required>
         @if ($errors->has('name'))
           @foreach ($errors->get('name') as $error)
             <div class="invalid-feedback">
@@ -43,7 +43,7 @@
       </div>
       <div class="form-group">
         <label for="text">Descripción</label>
-        <textarea class="form-control" name="description" rows="5"></textarea>
+        <textarea class="form-control" name="description" rows="5">{{ old('description') }}</textarea>
       </div>
     @endcomponent
 
