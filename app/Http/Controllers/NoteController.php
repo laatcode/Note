@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateNoteRequest;
 use App\Note;
 
 class NoteController extends Controller{
 
-    function create(Request $request, $id){
+    function create(CreateNoteRequest $request, $id){
       $note = Note::create([
         'title' => $request->input('title'),
         'text' => $request->input('text'),
