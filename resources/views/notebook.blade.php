@@ -45,7 +45,7 @@
 
       <div class="form-group">
         <label for="title" class="required">Título</label>
-        <input type="text" class="form-control @if($errors->has('title')) is-invalid @endif" name="title" required>
+        <input type="text" class="form-control @if($errors->has('title')) is-invalid @endif" name="title" value="{{ old('title') }}" required>
         @if ($errors->has('title'))
           @foreach ($errors->get('title') as $error)
             <div class="invalid-feedback">
@@ -56,7 +56,7 @@
       </div>
       <div class="form-group">
         <label for="text" class="required">Texto de la nota</label>
-        <textarea class="form-control @if($errors->has('text')) is-invalid @endif" name="text" rows="10" required></textarea>
+        <textarea class="form-control @if($errors->has('text')) is-invalid @endif" name="text" rows="10" required>{{ old('text')}}</textarea>
         @if ($errors->has('text'))
           @foreach ($errors->get('text') as $error)
             <div class="invalid-feedback">
