@@ -39,10 +39,18 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item"><a class="nav-link"href="{{ route('login') }}">Ingresar</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Registrarse</a></li>
+                            <li class="nav-item text-center"><a class="nav-link"href="{{ route('login') }}">Ingresar</a></li>
+                            <li class="nav-item text-center"><a class="nav-link" href="{{ route('register') }}">Registrarse</a></li>
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item text-center d-lg-none"><a class="nav-link" href="/notebooks">Mis libretas</a></li>
+                            <li class="nav-item text-center d-lg-none"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">Salir</a></li>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                 {{ csrf_field() }}
+                            </form>
+
+                            <li class="nav-item dropdown d-none d-lg-block">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
