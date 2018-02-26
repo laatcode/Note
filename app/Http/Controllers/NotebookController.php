@@ -27,9 +27,8 @@ class NotebookController extends Controller{
       return redirect('/notebook/' . $notebook->id);
     }
 
-    function show($id){
-      $notebook = Notebook::find($id);
-      $notes = Note::where('notebook_id', $id)->orderBy('created_at', 'desc')->get();
+    public function show(Notebook $notebook){
+      $notes = Note::where('notebook_id', $notebook->id)->orderBy('created_at', 'desc')->get();
       return view('notebook', [
         'notebook' => $notebook,
         'notes' => $notes,
