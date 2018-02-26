@@ -20,7 +20,7 @@
 
     @component('templates.createModal')
       @slot('route')
-        /notebooks/create
+        notebooks/create
       @endslot
 
       @slot('title')
