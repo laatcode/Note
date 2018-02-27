@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateNoteRequest;
 use App\Note;
+use App\Notebook;
 
 class NoteController extends Controller{
 
@@ -18,11 +19,11 @@ class NoteController extends Controller{
       return redirect("/notebook/$id");
     }
 
-    function show($notebookId, $noteId, $mode){
-      $note = Note::find($noteId);
+    function show(Notebook $notebook, Note $note, $mode){
+      // $note = Note::find($noteId);
       return view('note', [
         'note' => $note,
-        'notebookId' => $notebookId,
+        'notebookId' => $notebook->id,
         'mode' => $mode,
       ]);
     }
