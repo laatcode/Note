@@ -53,7 +53,7 @@ return [
     'max'                  => [
         'numeric' => 'El campo :attribute no puede ser mayor que :max.',
         'file'    => 'El campo :attribute no puede ser mayor que :max kilobytes.',
-        'string'  => 'El campo :attribute no puede ser mayor que :max characters.',
+        'string'  => 'El campo :attribute no puede ser mayor que :max caracteres.',
         'array'   => 'El campo :attribute no puede tener más de :max items.',
     ],
     'mimes'                => 'El campo :attribute debe ser un archivo de tipo: :values.',
@@ -120,7 +120,7 @@ return [
       'email' => 'Correo electrónico',
       'password' => 'Contraseña',
       'names' => 'Nombres',
-      'lastnames' => 'Apellidos', 
+      'lastnames' => 'Apellidos',
     ],
 
 ];
